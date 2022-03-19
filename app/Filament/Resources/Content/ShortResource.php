@@ -32,7 +32,7 @@ class ShortResource extends Resource
                             ->afterStateUpdated(fn ($state, callable $set) => $set('url', null)),
 
                         Forms\Components\BelongsToSelect::make('content_author_id')
-                            ->relationship('user', 'name')
+                            ->relationship('author', 'name')
                             ->searchable(),
 
                         Forms\Components\TextInput::make('name')
@@ -58,7 +58,7 @@ class ShortResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')
             ])
             ->filters([
                 //

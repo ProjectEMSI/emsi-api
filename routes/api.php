@@ -5,6 +5,9 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ShortsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Broadcast;
+
+Broadcast::routes(['middleware' => 'auth:sanctum']);
 
 Route::prefix('v1')->group(function () {
 
